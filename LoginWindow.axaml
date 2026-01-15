@@ -1,0 +1,30 @@
+<!-- Root window element for Avalonia, defines the main login window -->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DoorPanels.LoginWindow"
+        Title="System Login"
+        Width="350" Height="290">
+    
+    <!-- Vertical layout container for login controls -->
+    <StackPanel Margin="16" Spacing="8">
+        <TextBlock Text="Robot System Login"
+                   FontSize="18"
+                   Margin="0,0,0,12"/>
+
+        <TextBlock Text="Username"/>
+        <TextBox x:Name="UsernameBox"/>
+
+        <TextBlock Text="Password" Margin="0,8,0,0"/>
+        <TextBox x:Name="PasswordBox" PasswordChar="*"/>
+        
+        <TextBlock x:Name="LoginStatusText"
+                   Margin="0,8,0,0"
+                   Foreground="Red"
+                   TextWrapping="Wrap"/>
+
+        <Button Content="Login"
+                Margin="0,12,0,0"
+                HorizontalAlignment="Left"
+                Click="LoginButton_Click"/>
+    </StackPanel>
+</Window>

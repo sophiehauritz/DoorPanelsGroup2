@@ -1,0 +1,78 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="DoorPanels.MainWindow"
+        Title="Door Panel Assembly Control"
+        Width="500" Height="350">
+
+    <!-- Grid layout container with margins around content -->
+    <Grid Margin="16">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title -->
+        <TextBlock Text="Door Panel Assembly Control"
+                   FontSize="20"
+                   Margin="0,0,0,16"/>
+
+        <!-- Buttons + status (left stack) -->
+        <StackPanel Grid.Row="1" Spacing="8">
+
+            <!-- Door size selector -->
+            <StackPanel Orientation="Horizontal" Spacing="8">
+                <TextBlock Text="Door size:"
+                           VerticalAlignment="Center"/>
+                <ComboBox x:Name="DoorSizeComboBox"
+                          Width="180"
+                          SelectedIndex="0">
+                    <ComboBoxItem Content="Pick a door size"/>
+                    <ComboBoxItem Content="Small"/>
+                    <ComboBoxItem Content="Medium"/>
+                    <ComboBoxItem Content="Large"/>
+                </ComboBox>
+            </StackPanel>
+
+            <Button Content="Brake release / Connect"
+                    Click="BrakeRelease_Click"/>
+
+            <Button Content="Move door to work table"
+                    Click="MoveToWorkTable_Click"/>
+
+            <Button Content="Move door to storage magazine"
+                    Click="MoveToStorage_Click"/>
+
+            <!-- Status text -->
+            <TextBlock x:Name="StatusText"
+                       Text="Status: Idle"
+                       Margin="0,16,0,0"/>
+        </StackPanel>
+
+        <!-- Safety stop button -->
+        <Button Grid.Row="2"
+                Content="Stop program"
+                Click="Stop_Click"
+                Background="Crimson"
+                Foreground="White"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Margin="0,8,0,0"/>
+        
+        <!-- Finish order button -->
+        <Button Grid.Row="2"
+                Content="Finish order"
+                Click="FinishOrder_Click"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Margin="0,8,0,0"/> 
+
+        <!-- Logout button -->
+        <Button Grid.Row="2"
+                Content="Logout"
+                Click="Logout_Click"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="0,8,0,0"/>
+    </Grid>
+</Window>
